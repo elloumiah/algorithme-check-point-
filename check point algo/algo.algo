@@ -1,0 +1,52 @@
+ALGORITHM iterative_repeat
+VAR
+sentence :string ;
+length_sentence : INTEGER:=0;
+nb_words : INTEGER:=0;
+nb_voyels : INTEGER:=0;
+ch : CHAR;
+sentence='';
+
+BEGIN
+REPEAT
+Write("enter char by char");
+        read(ch);
+        sentence+=ch;
+        length_sentence+=1;
+UNTIL (ch=='.')
+
+FOR i FROM 0 TO length_sentence-1 STEP 1  DO
+        if (sentence[i]==" ")
+        nb_words+=1;
+        SWITCH (sentence[i].toLower()) DO
+        CASE 'o' : nb_voyels=nb_voyels+1; 
+        BREAK; 
+        CASE 'i' : nb_voyels=nb_voyels+1;
+        BREAK;
+        CASE 'y' : nb_voyels=nb_voyels+1;
+        BREAK;
+        CASE 'e' : nb_voyels=nb_voyels+1;
+        BREAK;
+        CASE 'a' : nb_voyels=nb_voyels+1;
+        BREAK;
+        CASE 'u' : nb_voyels=nb_voyels+1;
+
+END_SWITCH
+
+END_FOR
+
+Write ('sentence contain ',nb_words,'word,',nb_voyels,'voyelle and',length_sentence,'length' );
+
+
+//  WHILE (i<>'.' ) DO
+//   2='o'or'i'or'y'or'e' or 'a' or 'u' ;
+//   SWITCH (ch[i]) DO
+//     CASE ' ' : j=j+1; // code to be executed if n = 1;
+//             BREAK; // BREAK is used to skip the other cases
+//     CASE 2 : k=k+1// code to be executed if n = 2;
+//     DEFAULT :  // code to be executed if n doesn't match any cases
+// END_SWITCH
+//  END_WHILE
+//  Write('sintence contain 'j+1'word,'k'voyelle and'i+1'length' )
+
+// END
